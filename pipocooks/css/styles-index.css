@@ -1,0 +1,58 @@
+/* ----- GENERAL ----- */
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+.a {
+    text-decoration: none;
+    color: black;
+}
+.a :hover{
+    color: black;
+}
+.img :hover{
+    color: black;
+}
+
+/* ----- NAV ----- */
+.nav{
+    margin: 10px 40px 0 40px;
+    align-items: center;
+}
+.contenedor-recetas{
+    display: flex; 
+    justify-content: space-between; 
+    margin: 20px 40px;
+}
+
+/* ----- MAIN ----- */
+.buscador{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+.buscador input{
+    width: 300px;
+    height: 40px;
+    padding: 0 20px;
+    font-size: 18px;
+    outline: none;
+    border: 2px solid silver;
+    border-radius: 30px;
+}
+.fa-magnifying-glass{
+    position: relative;
+    font-size: 25px;
+    margin-left: -60px;
+}
+.fa-caret-down{
+    position: relative;
+    font-size: 30px;
+    margin-left: -30px;
+}
+.subtitulo{
+    margin-left: 40px;
+}
