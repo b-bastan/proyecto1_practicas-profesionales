@@ -6,6 +6,15 @@
     text-decoration: none;
 }
 
+::selection {
+    background-color: rgb(175, 99, 0);
+    color: white;
+}
+
+:root{
+    --color-fuente: hsl(27, 100%, 20%);
+}
+
 .a {
     text-decoration: none;
     color: black;
@@ -47,12 +56,22 @@
     position: relative;
     font-size: 25px;
     margin-left: -60px;
+    color: var(--color-fuente);
 }
 .fa-caret-down{
     position: relative;
     font-size: 30px;
     margin-left: -30px;
+    color: var(--color-fuente);
 }
 .subtitulo{
     margin-left: 40px;
+}
+
+.fa-circle-user {
+    color: var(--color-fuente);
+}
+
+.fa-bars {
+    color: var(--color-fuente);
 }
