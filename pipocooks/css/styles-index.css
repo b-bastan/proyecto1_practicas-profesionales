@@ -37,6 +37,10 @@
     margin: 20px 40px;
 }
 
+.btn:focus{
+    box-shadow: none !important;
+}
+
 /* ----- MAIN ----- */
 .buscador{
     display: flex; 
