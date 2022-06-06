@@ -41,35 +41,33 @@ ul {
     font-size: 19px;
 }
 
-.menu-desplegable {
-    flex: 1;
-    padding: 30px 100px 0 20px;
-    height: 100%;
-    background-color: red;
-    position: fixed;
-    z-index: 100;
-    max-width: 280px;
-    color: black;
-}
 
-.menu-desplegable .menu-general .dropdown ul.dropdown-menu.show{
+.menu-general .dropdown ul.dropdown-menu.show{
     position: relative !important;
     transform: translate(0px, 0px) !important;
-    background-color: red;
     border: none;
 }
 
-.menu-desplegable .menu-general .dropdown .btn{
-    background-color:red;
+.menu-general .dropdown .btn{
+    background-color:white;
     border: none;
     padding: 0;
     font-size: 19px;
     color: black;
 }
 
-.menu-desplegable .menu-general .dropdown .dropdown-menu .dropdown-item{
+.menu-general .dropdown .dropdown-menu .dropdown-item{
     position: relative !important;
     margin-top: 0px !important;
+}
+
+.btn-primary{
+    background-color: white !important;
+    border: none !important;
+}
+
+.offcanvas{
+    width: 300px !important;
 }
 
 /* ----- NAV ----- */
