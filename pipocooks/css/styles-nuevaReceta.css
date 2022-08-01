@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+::selection {
+    background-color: rgb(175, 99, 0);
+    color: white    ;
+}
+
+/* General */
+
+.container {
+    width: 60%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    margin: 10px 40px;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.fa-solid {
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
+}
+
+section {
+    margin-bottom: 1em;
+}
+
+input {
+    outline: none;
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 10px 20px;
+    border: none;
+}
+
+/* Header */
+
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#dropdownMenuButton1 {
+    border: none;
+}
+
+/* Arrastrar imágenes */
+
+.arrastrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid hsla(0, 0%, 50%, 0.473);
+    border-radius: 2em;
+    padding: 2rem 0;
+    cursor: pointer;
+}
+
+.arrastrar__img {
+    opacity: 40%;
+    width: 5em;
+}
+
+.arrastrar h3{
+    opacity: 40%;
+    margin-top: .5em;
+}
+
+/* Info receta */
+
+.info-receta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.info-receta button {
+    width: 100%;
+    margin-bottom: 1em;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5em 1em;
+}
