@@ -65,6 +65,23 @@ input {
     border: none;
 }
 
+.nav-derecha {
+    display: flex;
+    flex-direction: row;
+}
+
+.publicar-receta {
+    border: none;
+    font-size: 1em;
+    background-color: rgb(221, 167, 101);
+    color: white;
+    border-radius: 1.5em;
+    padding: 0 1.8em;
+    height: 2.2em;
+    align-self: center;
+    margin-right: 1.5em;
+}
+
 /* Arrastrar imágenes */
 
 .arrastrar {
@@ -104,4 +121,94 @@ input {
     justify-content: space-between;
     align-items: center;
     padding: .5em 1em;
+}
+
+/* Ingredientes */
+
+#ingredientes .container {
+    padding: 10px 20px;
+}
+
+#ingredientes h1 {
+    font-size: 30px;
+    margin-bottom: .7em;
+    margin-top: -.7em;
+}
+
+.ingredientes__input {
+    display: flex;
+    flex-direction: column;
+}
+
+.ingredientes__input input {
+    margin: 0 auto;
+}
+
+.ingredientes__input--ingrediente {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: .5em;
+}
+
+.ingredientes__input--seccion {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: .5em;
+}
+
+#ingredientes .fa-solid {
+    opacity: 90%;
+}
+
+.ingredientes__crear {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ingredientes__crear button {
+    border: 0px;
+    margin: 0 0.8em;
+    font-size: 1.2em;
+}
+
+/* Pasos */
+
+.pasos__paso {
+    display: flex;
+    flex-direction: column;
+}
+
+.div {
+    display: flex;
+    padding: 10px 20px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.pasos__paso--parte1, .pasos__paso--parte2, .pasos__paso--parte3 {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: .5em;
+}
+
+.pasos__paso--parte2 {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.pasos__crear {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pasos__crear button {
+    border: 0px;
+    margin: 0 0.8em;
+    font-size: 1.2em;
 }
