@@ -158,8 +158,8 @@ input {
     margin-bottom: .5em;
 }
 
-#ingredientes .fa-solid {
-    opacity: 90%;
+#ingredientes .fa-solid , #pasos .fa-solid{
+    opacity: 50%;
 }
 
 .ingredientes__crear {
@@ -211,4 +211,11 @@ input {
     border: 0px;
     margin: 0 0.8em;
     font-size: 1.2em;
+}
+
+.pasos__paso--parte1 :first-child {
+    background-color: rgb(212, 141, 59);
+    border-radius: 50px;
+    color: antiquewhite;
+    margin-bottom: .5em;
 }
