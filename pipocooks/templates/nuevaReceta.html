@@ -47,19 +47,23 @@
     </section>
 
     <section id="ingredientes">
-        <div class="container">
+        <div class="container" id="container">
             <h1>Ingredientes</h1>
-            <div class="ingredientes">
+            <div class="ingredientes" id="listaIngredientes">
                 <div class="ingredientes__input" id="ingredientes__input">
                     <div class="ingredientes__input--ingrediente">
                         <i class="fa-solid fa-list-ul"></i>
                         <input type="text" placeholder="Ejemplo: Papa" maxlength="100">
-                        <i class="fa-solid fa-trash-can"></i>
+                        <a href="#" class="trash">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </a>
                     </div>
                     <div class="ingredientes__input--seccion">
                         <i class="fa-solid fa-list-ul"></i>
                         <input type="text" placeholder="Ejemplo: Tuco" maxlength="100">
-                        <i class="fa-solid fa-trash-can"></i>
+                        <a href="#" class="trash">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="ingredientes__crear">
@@ -74,7 +78,7 @@
         <div class="container">
             <div class="pasos">
                 <div class="pasos__paso" id="pasos__paso">
-                    <div class="div">
+                    <div class="div" draggable="true">
                         <div class="pasos__paso--parte1">
                             <div class="last">1</div>
                             <i class="fa-solid fa-list-ul"></i>
@@ -83,11 +87,9 @@
                             <input class="textarea" placeholder="Ejemplo"></input>
                             <input type="image">
                         </div>
-                        <div class="pasos__paso--parte3">
-                            <i class="fa-solid fa-trash-can"></i>
-                        </div>
+                        <a href="#" class="trash">Eliminar</a>
                     </div>
-                    <div class="div">
+                    <div class="div" draggable="true">
                         <div class="pasos__paso--parte1">
                             <div class="last">2</div>
                             <i class="fa-solid fa-list-ul"></i>
@@ -96,9 +98,7 @@
                             <input type="text" placeholder="Ejemplo: Precalentar el horno a 180°..." maxlength="300">
                             <input type="image">
                         </div>
-                        <div class="pasos__paso--parte3">
-                            <i class="fa-solid fa-trash-can"></i>
-                        </div>
+                        <a href="#" class="trash">Eliminar</a>
                     </div>
                 </div>
                 <div class="pasos__crear">
@@ -107,7 +107,11 @@
             </div>
         </div>
     </section>
-    <script src="https://kit.fontawesome.com/359e1b0e60.js" crossorigin="anonymous"></script>
     <script src="/pipocooks/js/nuevaReceta.js"></script>
+
+    <script src="https://kit.fontawesome.com/359e1b0e60.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
 </body>
 </html>

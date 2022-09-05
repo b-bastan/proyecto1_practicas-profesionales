@@ -37,8 +37,13 @@ h1 {
     cursor: pointer;
 }
 
+.fa-trash-can {
+    color: black;
+}
+
 button {
     cursor: pointer;
+    background-color: white;
 }
 
 section {
@@ -156,6 +161,7 @@ input {
     justify-content: center;
     align-items: center;
     margin-bottom: .5em;
+    border-top: 1px solid rgb(105, 105, 105);
 }
 
 #ingredientes .fa-solid , #pasos .fa-solid{
