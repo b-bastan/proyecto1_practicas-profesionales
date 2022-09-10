@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva receta | Pipo Cook's</title>
+    <link rel="stylesheet" href="/pipocooks/css/styles-nuevaReceta.css">
+</head>
+<body>
+    <header>
+        <div class="nav" style="display: flex; justify-content: space-between;">
+            <h1>Pipo Cook's</h1>
+            <div class="nav-derecha">
+                <button class="publicar-receta">Publicar</button>
+                <div class="dropdown">
+                    <button class="btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 50px; text-align: end;"><i class="fa-solid fa-ellipsis"></i>
+                    </button>
+                    
+                    <!-- <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                      <li style="padding: 0.25rem 1rem;"><i class="fa-solid fa-trash-can"></i></li>
+                    </ul> -->
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="arrastrar">
+        <div class="container">
+            <div class="arrastrar" id="cajasoltar">
+                <img src="/pipocooks/img/camara.png" alt="Foto de una foto" class="arrastrar__img">
+                <h3>Publicar foto del plato</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="info-receta">
+        <div class="container">
+            <div class="info-receta">
+                <input type="text" placeholder="Nombre de la receta" style="font-size: 2rem;">
+                <input type="text" placeholder="Descripción" style="font-size: 1.5rem;">
+                <input type="text" placeholder="Añade la procedencia de tu receta" style="font-size: 1.1rem;">
+                <input type="text" placeholder="Cantidad de comensales">
+                <input type="text" placeholder="Tiempo de elaboración">
+            </div>
+        </div>
+    </section>
+
+    <section id="ingredientes">
+        <div class="container" id="container">
+            <h1>Ingredientes</h1>
+            <div class="ingredientes" id="listaIngredientes">
+                <div class="ingredientes__input" id="ingredientes__input">
+                    <div class="ingredientes__input--ingrediente">
+                        <i class="fa-solid fa-list-ul"></i>
+                        <input type="text" placeholder="Ejemplo: Papa" maxlength="100">
+                        <a href="#" class="trash">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </a>
+                    </div>
+                    <div class="ingredientes__input--seccion">
+                        <i class="fa-solid fa-list-ul"></i>
+                        <input type="text" placeholder="Ejemplo: Tuco" maxlength="100">
+                        <a href="#" class="trash">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ingredientes__crear">
+                    <button id="ingrediente_btn">+ Ingrediente</button>
+                    <button id="seccion_btn">+ Sección</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pasos">
+        <div class="container">
+            <div class="pasos">
+                <div class="pasos__paso" id="pasos__paso">
+                    <div class="div" draggable="true">
+                        <div class="pasos__paso--parte1">
+                            <div class="last">1</div>
+                            <i class="fa-solid fa-list-ul"></i>
+                        </div>
+                        <div class="pasos__paso--parte2">
+                            <input class="textarea" placeholder="Ejemplo"></input>
+                            <input type="image">
+                        </div>
+                        <a href="#" class="trash">Eliminar</a>
+                    </div>
+                    <div class="div" draggable="true">
+                        <div class="pasos__paso--parte1">
+                            <div class="last">2</div>
+                            <i class="fa-solid fa-list-ul"></i>
+                        </div>
+                        <div class="pasos__paso--parte2">
+                            <input type="text" placeholder="Ejemplo: Precalentar el horno a 180°..." maxlength="300">
+                            <input type="image">
+                        </div>
+                        <a href="#" class="trash">Eliminar</a>
+                    </div>
+                </div>
+                <div class="pasos__crear">
+                    <button id="paso_btn">+ Paso</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="/pipocooks/js/nuevaReceta.js"></script>
+
+    <script src="https://kit.fontawesome.com/359e1b0e60.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+</body>
+</html>
