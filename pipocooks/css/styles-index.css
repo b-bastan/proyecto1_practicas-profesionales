@@ -32,6 +32,10 @@ body{
     color: black;
 }
 
+.card {
+    width: 19%;
+}
+
 ul {
     list-style: none;
 }
@@ -122,4 +126,32 @@ ul {
 
 .fa-bars {
     color: var(--color-fuente);
+}
+
+/* ----- RESPONSIVE ----- */
+
+@media (max-width: 1000px) {
+    .contenedor-recetas {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        width: 48%;
+        margin: 0 auto 1em auto;
+    }
+}
+
+@media (max-width: 480px) { celulares
+    .contenedor-recetas {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        width: 90%;
+        margin: 0 auto 1em auto;
+    }
 }
