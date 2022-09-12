@@ -47,10 +47,12 @@ insertarP.addEventListener('click', function (){
 
 // Reordenar elementos
 
+// LINK PARA ESTO https://www.digitalocean.com/community/tutorials/js-drag-and-drop-vanilla-js-es
+
 function handleDragStart(e) {
     this.style.opacity = '0.6';
 
-    dragSrcEl = this;
+    dragSrcEl = this;   
 
     e.dataTransfer.effectAllowed = 'move';
     e.dataTransfer.setData('text/html', this.innerHTML);
