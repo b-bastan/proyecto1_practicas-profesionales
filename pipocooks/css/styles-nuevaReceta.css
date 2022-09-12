@@ -87,6 +87,10 @@ input {
     margin-right: 1.5em;
 }
 
+.btn {
+    font-size: 50px; 
+}
+
 /* Arrastrar imágenes */
 
 .arrastrar {
@@ -111,6 +115,10 @@ input {
 }
 
 /* Info receta */
+
+#nombreReceta {
+    font-size: 2rem;
+}
 
 .info-receta {
     display: flex;
@@ -224,4 +232,47 @@ input {
     border-radius: 50px;
     color: antiquewhite;
     margin-bottom: .5em;
+}
+
+@media screen and (max-width: 956px){
+    /* Header */
+    .nav h1{
+        font-size: 30px;
+    }
+
+    .btn {
+        font-size: 40px; 
+        text-align: end;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .container {
+        width: 100%;
+    }
+
+    /* Header */
+    .nav h1{
+        font-size: 20px;
+    }
+
+    header {
+        margin-bottom: 1em;
+    }
+
+    .publicar-receta {
+        padding: 0 1em;
+        height: 2em;
+    }
+
+    .btn {
+        font-size: 30px; 
+        text-align: end;
+    }
+
+    /* info-receta */
+
+    #nombreReceta {
+        font-size: 10px;
+    }
 }
