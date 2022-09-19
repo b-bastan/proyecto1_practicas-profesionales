@@ -130,7 +130,20 @@ ul {
 
 /* ----- RESPONSIVE ----- */
 
-@media (max-width: 1000px) {
+@media (max-width: 1280px) {
+    .contenedor-recetas {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        width: 30%;
+        margin: 0 auto 1em auto;
+    }
+}
+
+@media (max-width: 768px) {
     .contenedor-recetas {
         display: flex;
         justify-content: center;
@@ -141,9 +154,17 @@ ul {
         width: 48%;
         margin: 0 auto 1em auto;
     }
+
+    .offcanvas{
+        width: 250px !important;
+    }
+
+    .menu-general {
+        padding: 0 0 0 16px;
+    }
 }
 
-@media (max-width: 480px) { celulares
+@media (max-width: 480px) {
     .contenedor-recetas {
         display: flex;
         justify-content: center;
@@ -154,4 +175,65 @@ ul {
         width: 90%;
         margin: 0 auto 1em auto;
     }
+
+    .offcanvas{
+        width: 200px !important;
+    }
 }
+
+@media (max-width: 380px) {
+    .contenedor-recetas {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        width: 90%;
+        margin: 0 auto 1em auto;
+    }
+
+    .titulo {
+        font-size: 24px;
+    }
+
+    .fa-bars, .fa-circle-user{
+        font-size: 40px !important;
+    }
+}
+
+@media (max-width: 340px) {
+    .titulo {
+        font-size: 18px;
+    }
+
+    .fa-bars, .fa-circle-user{
+        font-size: 30px !important;
+    }
+}
+
+@media (max-width: 300px) {
+    .contenedor-recetas {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        width: 95%;
+        margin: 0 auto 1em auto;
+    }
+
+    .offcanvas{
+        width: 100% !important;
+    }
+
+    .titulo {
+        display: none;
+    }
+
+    .fa-bars, .fa-circle-user{
+        font-size: 45px !important;
+    }
+}
+
