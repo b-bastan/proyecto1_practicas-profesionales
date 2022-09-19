@@ -117,7 +117,15 @@ input {
 /* Info receta */
 
 #nombreReceta {
-    font-size: 2rem;
+    font-size: 2em;
+}
+
+#descripcion {
+    font-size: 1.5em;
+}
+
+#procedencia {
+    font-size: 1.1em;
 }
 
 .info-receta {
@@ -253,7 +261,7 @@ input {
 
     /* Header */
     .nav h1{
-        font-size: 20px;
+        font-size: 2em;
     }
 
     header {
@@ -273,6 +281,20 @@ input {
     /* info-receta */
 
     #nombreReceta {
-        font-size: 10px;
+        font-size: 1.5em;
+    }
+
+    #descripcion {
+        font-size: 1.3em;
+    }
+
+    #procedencia {
+        font-size: 1em;
+    }
+
+    /* Ingredientes */
+
+    #ingredientes h1 {
+        font-size: 1.7em;
     }
 }
