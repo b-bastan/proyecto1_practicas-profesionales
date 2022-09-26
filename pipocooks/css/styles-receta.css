@@ -20,7 +20,6 @@
 .valoracion{
     display: flex;
     flex-direction: row;
-    
 }
 
 .mas-info hr{
@@ -57,4 +56,56 @@
 
 .comment{
     width: 70%;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 1024px) {
+
+    /* Header */
+
+    .nav {
+        margin: 0 17px;
+    }
+
+    /* General */
+
+    .espaciado{
+        padding: 0 30px 30px 30px;
+    }
+
+    .descripcion{
+        padding-left: 0;
+    }
+
+    /* Receta */
+
+    .receta{
+        flex-direction: column;
+    }
+
+    .descripcion {
+        margin-top: 1em;
+    }
+
+    /* Ingredientes */
+
+    .ingredientes {
+        margin-bottom: 1em;
+    }
+
+    /* Comentarios */
+
+    .comment{
+        width: 100%;
+    }
+
+    .comment hr {
+        margin-top: 5px;
+        margin-bottom: .8em;
+    }
+
+    .nombre {
+        padding-top: .5em;
+    }
 }
