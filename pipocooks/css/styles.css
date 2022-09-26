@@ -151,9 +151,14 @@ main{
         margin-top: 50px;
     }
 
+    .contenedor_todo { /*Ordena todo de manera inversa, de manera tal que quedan los formularios sobre la seccion para cambiar de formulario*/
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
     .caja_trasera{
         max-width: 350px;
-        height: 300px;
+        min-height: 200px; /*Quito excesos de padding top y bottom*/
         flex-direction: column;
         margin: auto;
     }
@@ -166,12 +171,33 @@ main{
     /*Formularios*/
 
     .contenedor_login_register{
-        top: -10px;
+        top: -0px;
         left: -5px;
         margin: auto;
     }
 
     .contenedor_login_register form{
         position: relative;
+        padding: 40px 20px; /*Quito excesos de padding top y bottom*/
     }
+}
+
+@media screen and (max-width: 420px) {
+
+    /*Ajuste tamaño títulos*/
+
+    .contenedor_login_register form h2 {
+        font-size: 26px;
+    }
+
+    h3 {
+        font-size: 20px !important;
+    }
+    
+    /*Ajuste tamaño textos*/
+
+}
+
+@media screen and (max-width: 380px) {
+
 }
