@@ -68,7 +68,11 @@ $NyA = $nombre." ".$apellido;
                     <button class="btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 50px; text-align: end;"><i class="fa-solid fa-circle-user"></i>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                      <li style="padding: 0.25rem 1rem;"><?php echo $NyA;?></li>
+                      <li style="padding: 0.25rem 1rem;"><?php echo $NyA;
+                      
+                      // Hay que crear if para que aparezca un boton de iniciar sesion en caso que no haya nada conectado
+                      
+                      ?></li>
                       <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user"></i>&nbsp&nbsp&nbspTu perfil</a></li>
                       <li><a class="dropdown-item" href="./templates/login.php" style="display: flex; justify-self: right;"><i class="fa-solid fa-arrow-right-from-bracket" style="padding-top: 5px ;"></i>&nbsp&nbsp&nbspCerrar sesión</a></li>
                     </ul>
