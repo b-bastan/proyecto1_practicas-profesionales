@@ -14,6 +14,7 @@ $consulta->execute();
 $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
 $filas = $consulta->rowCount();
 
+// Si coinciden los datos ingresados con algun usuario de la base de datos entra, sino tira un mensaje de error
 if ($filas > 0){
     $idUsuario = $resultado['idUsuario'];
     header("Location: ../index.php?idUsuario=$idUsuario");

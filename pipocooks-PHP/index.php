@@ -1,16 +1,34 @@
 <?php
+// Se trae el valor de mensaje_recibido y de Usuarios solicitados previamente en login.php
 $mensaje_recibido = $_REQUEST["mensaje"];
 $idUsuario = $_REQUEST["idUsuario"];
+// Se incluye las variables para entrar en la base de datos en conf.pipocooks
 include ("./conf/conf.pipocooks");
 
+// Se entra en la base de datos con el usuario y contraseña guardados en el conf.pipocooks
 $dbh = new PDO("mysql:host=$host;dbname=$dbname", $user, $pwd);
 $consulta = $dbh->prepare("select * from usuario 
 					where idUsuario=".$idUsuario);
+// Se hace una consulta donde trae unicamente los datos del usuario que coincida con el idUsuario que tenga nuestro usuario, si no tenemos uno va a ser igual a ""
 $consulta->execute();
 $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
 $nombre = $resultado['nombre_usuario'];
 $apellido = $resultado['apellido_usuario'];
 $NyA = $nombre." ".$apellido;
+// La variable NyA contiene los datos del nombre y del apellido juntos para luego mostrarlo posteriormente
+
+// Se hace una consulta donde trae todas las recetas de la base de datos
+$consultaReceta = $dbh->prepare("select * from recetas order by nombre_receta");
+$consultaReceta->execute();
+while($resultadoReceta = $consultaReceta->fetch(PDO::FETCH_ASSOC))
+{
+    //Se guardan en un array para poder almacenar todas individualmente
+    $idReceta[] = $resultadoReceta['idReceta'];
+    $nombreReceta[] =  $resultadoReceta['nombre_receta'];
+    $descripcionReceta[] =  $resultadoReceta['descripcion_receta'];
+    $imagenReceta[] = $resultadoReceta['imagen_receta'];
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -32,55 +50,59 @@ $NyA = $nombre." ".$apellido;
                 <button class="btn btn-primary quitacolor" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                     <i class="fa-solid fa-bars" style="font-size: 50px;"></i>
                 </button>
-                  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
                     <div class="offcanvas-header" style="justify-content: right;">
-                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body" style="margin-top: -30px;">
                         <ul class="menu-general">
                             <div class="dropdown">
                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                  Recetas
+                                Recetas
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                  <li><a class="dropdown-item" href="#">Bebidas</a></li>
-                                  <li><a class="dropdown-item" href="#">Arroces</a></li>
-                                  <li><a class="dropdown-item" href="#">Ensaladas</a></li>
+                                    <li><a class="dropdown-item" href="#">Bebidas</a></li>
+                                    <li><a class="dropdown-item" href="#">Arroces</a></li>
+                                    <li><a class="dropdown-item" href="#">Ensaladas</a></li>
                                 </ul>
                             </div>
                             <div class="dropdown">
                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                  Recetas dulces
+                                Recetas dulces
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                  <li><a class="dropdown-item" href="#">Tortas y budines</a></li>
-                                  <li><a class="dropdown-item" href="#">Galletas</a></li>
-                                  <li><a class="dropdown-item" href="#">Ensaladas</a></li>
+                                    <li><a class="dropdown-item" href="#">Tortas y budines</a></li>
+                                    <li><a class="dropdown-item" href="#">Galletas</a></li>
+                                    <li><a class="dropdown-item" href="#">Ensaladas</a></li>
                                 </ul>
                             </div>
                             <li style="height: 31.5px;">Más recetas</li>
                             <li>Sobre nosotros</li>
                             <li>Contacto</li>
                         </ul>
-                      </div>
+                    </div>
                     </div>
                 <h1>Pipo Cook's</h1>
                 <div class="dropdown">
                     <button class="btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 50px; text-align: end;"><i class="fa-solid fa-circle-user"></i>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                      <li style="padding: 0.25rem 1rem;"><?php
-                      
-                      if ($NyA == " "){
-                        echo "<li><a class='dropdown-item' href='./templates/login.php' style='display: flex; justify-self: right;'><i class='bi bi-person-plus-fill'></i>&nbsp&nbsp&nbspIniciar sesión</a></li>";
-                      } else if ($NyA != " "){
-                        echo $NyA;
-                        echo "<li><a class='dropdown-item' href='#'><i class='fa-solid fa-user'></i>&nbsp&nbsp&nbspTu perfil</a></li>
-                        <li><a class='dropdown-item' href='./templates/login.php' style='display: flex; justify-self: right;'><i class='fa-solid fa-arrow-right-from-bracket' style='padding-top: 5px ;'></i>&nbsp&nbsp&nbspCerrar sesión</a></li>";
-                      }
+                        <li style="padding: 0.25rem 1rem;">
+                        <?php
+                        
+                            // Si no estas logueado va a aparecer un boton para iniciar sesion
+                            if ($NyA == " "){
+                                echo "<li><a class='dropdown-item' href='./templates/login.php' style='display: flex; justify-self: right;'><i class='bi bi-person-plus-fill'></i>&nbsp&nbsp&nbspIniciar sesión</a></li>";
+                            // Si estas logueado van a aparecer un boton para cerrar sesion y otro para ver mi Perfil
+                            } else if ($NyA != " "){ 
+                                echo $NyA;
+                                echo "<li><a class='dropdown-item' href='#'><i class='fa-solid fa-user'></i>&nbsp&nbsp&nbspTu perfil</a></li>
+                                <li><a class='dropdown-item' href='./templates/login.php' style='display: flex; justify-self: right;'><i class='fa-solid fa-arrow-right-from-bracket' style='padding-top: 5px ;'></i>&nbsp&nbsp&nbspCerrar sesión</a></li>";
+                            }
                       // Si clickea cerrar sesión volver al login y desloguearse
-                      
-                      ?></li>
+                        
+                        ?>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -94,61 +116,23 @@ $NyA = $nombre." ".$apellido;
             <div>
                 <h3 class="subtitulo">Recetas más buscadas</h3>
                 <div class="contenedor-recetas">
-                    <div class="card img" style="width: 18rem;">
-                      <?php
-                        echo "<a href='./templates/receta.php?idUsuario=$idUsuario' class='a'>
-                            <img src='img/tacos.jpg' class='card-img-top' alt='...'>
-                            <div class='card-body'>
-                                <h5 class='card-title'>Tacos Mexicanos</h5>
-                                <p class='card-text'>Seamos felices, comamos tacos. El ABC de como hacer tacos, los mejores del mundo! La gastronomía mexicana me fascina y no quería dejar pasar ésta oportunidad, revisamos todo lo que necesitas para prepararlos en casa. Esta receta es lo más!</p>
-                            </div>
-                        </a>";
-                        ?>
-                    </div>
-                    <div class="card img" style="width: 18rem;">
                     <?php
-                        echo "<a href='./templates/receta.php?idUsuario=$idUsuario' class='a'>
-                            <img src='img/tacos.jpg' class='card-img-top' alt='...'>
-                            <div class='card-body'>
-                                <h5 class='card-title'>Tacos Mexicanos</h5>
-                                <p class='card-text'>Seamos felices, comamos tacos. El ABC de como hacer tacos, los mejores del mundo! La gastronomía mexicana me fascina y no quería dejar pasar ésta oportunidad, revisamos todo lo que necesitas para prepararlos en casa. Esta receta es lo más!</p>
-                            </div>
-                        </a>";
+                    // Se recorre todas las recetas y por cada una genera una "tarjeta" con la imagen, nombre y descripcion de receta
+                    for($i = 0; $i < sizeof($nombreReceta); $i++){ 
                         ?>
-                    </div>
-                    <div class="card img" style="width: 18rem;">
-                    <?php
-                        echo "<a href='./templates/receta.php?idUsuario=$idUsuario' class='a'>
-                            <img src='img/tacos.jpg' class='card-img-top' alt='...'>
-                            <div class='card-body'>
-                                <h5 class='card-title'>Tacos Mexicanos</h5>
-                                <p class='card-text'>Seamos felices, comamos tacos. El ABC de como hacer tacos, los mejores del mundo! La gastronomía mexicana me fascina y no quería dejar pasar ésta oportunidad, revisamos todo lo que necesitas para prepararlos en casa. Esta receta es lo más!</p>
+                        <div class="card img" style="width: 18rem;">
+                        
+                        <a href="./templates/receta.php?idUsuario=<?php echo  $idUsuario;?>&idReceta=<?php echo $idReceta[$i]; //* Esto Funciona para poder navegar entre las paginas y se quede guardado el usuario con el que estas logueado
+                        ?>" class="a">
+                            <img src="./img/<?php echo $imagenReceta[$i]; ?>" class="card-img-top" height="200px" alt="...">
+                            <div class="card-body">
+                                <h2 class="card-title"><?php echo  $nombreReceta[$i];?></h2>
+                                <p class="card-text"><?php echo $descripcionReceta[$i]; ?></p>
                             </div>
-                        </a>";
-                        ?>
+                        </a>
+                        
                     </div>
-                    <div class="card img" style="width: 18rem;">
-                    <?php
-                        echo "<a href='./templates/receta.php?idUsuario=$idUsuario' class='a'>
-                            <img src='img/tacos.jpg' class='card-img-top' alt='...'>
-                            <div class='card-body'>
-                                <h5 class='card-title'>Tacos Mexicanos</h5>
-                                <p class='card-text'>Seamos felices, comamos tacos. El ABC de como hacer tacos, los mejores del mundo! La gastronomía mexicana me fascina y no quería dejar pasar ésta oportunidad, revisamos todo lo que necesitas para prepararlos en casa. Esta receta es lo más!</p>
-                            </div>
-                        </a>";
-                        ?>
-                    </div>
-                    <div class="card img" style="width: 18rem;">
-                    <?php
-                        echo "<a href='./templates/receta.php?idUsuario=$idUsuario' class='a'>
-                            <img src='img/tacos.jpg' class='card-img-top' alt='...'>
-                            <div class='card-body'>
-                                <h5 class='card-title'>Tacos Mexicanos</h5>
-                                <p class='card-text'>Seamos felices, comamos tacos. El ABC de como hacer tacos, los mejores del mundo! La gastronomía mexicana me fascina y no quería dejar pasar ésta oportunidad, revisamos todo lo que necesitas para prepararlos en casa. Esta receta es lo más!</p>
-                            </div>
-                        </a>";
-                        ?>
-                    </div>
+                    <?php } ?>
                 </div>
             </div>
         </main>

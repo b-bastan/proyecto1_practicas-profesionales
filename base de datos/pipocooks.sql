@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 02-10-2022 a las 00:43:12
+-- Tiempo de generación: 02-10-2022 a las 22:50:51
 -- Versión del servidor: 8.0.17
 -- Versión de PHP: 7.3.10
 
@@ -81,7 +81,7 @@ INSERT INTO `ingredientes` (`idIngrediente`, `nombre_ingrediente`, `cantidad`, `
 
 CREATE TABLE `pasos` (
   `idPasos` int(11) NOT NULL,
-  `descripcion_pasos` varchar(100) NOT NULL,
+  `descripcion_pasos` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `idRecetaFK` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -90,11 +90,35 @@ CREATE TABLE `pasos` (
 --
 
 INSERT INTO `pasos` (`idPasos`, `descripcion_pasos`, `idRecetaFK`) VALUES
-(1, '-Colocar la sartén a fuego medio\r\n-Colocar el aceite en la sartén\r\n-Romper el huevo y colocarlo en l', 1),
-(2, 'Pelar y cortar las papas y zanahorias en cubos .\r\n\r\nPoner a hervir con la cucharita de vinagre en el', 2),
-(3, '1. Triturar las vainillas y mezclar con el dulce, coco, chocolate derretido y formar bolitas. LLevar', 3),
-(4, '1. Condimentar las presas de pollo con bastante pimentón dulce frotando con las manos para que se im', 4),
-(5, '1- Lo primero que tenemos que hacer es calentar el disco en leña, o carbón. Lo que tengas. El disco ', 5);
+(1, '-Colocar la sartén a fuego medio\r\n', 1),
+(2, 'Colocar el aceite en la sartén', 1),
+(3, 'Romper el huevo y colocarlo en la sartén', 1),
+(4, 'Una vez que ven que los bordes del huevo están doraditos, lo retiran del aceite con muchísimo cuidado y lo depositan sobre un plato', 1),
+(6, 'Pelar y cortar la papa en cubos de 1cm x 1cm aproximadamente. Pelar y cortar la zanahoria en cubos de la mitad del tamaño que la papa (en este caso sería 0.5 x 0.5cm) Para que la ensalada rusa quede genial, es importante que al cocinar todo junto, no quede la zanahoria cruda, ni se pase la papa. Con estas medidas van a estar genial.', 2),
+(7, 'Llevar las papas y las zanahorias cortadas a una olla amplia con mucha agua (así como sale de la canilla). Agregar el laurel y la sal gruesa y llevar al fuego hasta que la papa esté cocida. Para medir esto pueden pinchar una papita con un cuchillo, si la papa sin desarmarse se cae del cuchillo, sacála nomás!\r\n', 2),
+(8, 'Si usan arvejas congeladas, las agregan a la olla y dejar un minuto más o menos. Si usan arvejas de lata las agregan cuando la papa y la zanahoria ya están escurridas.\r\n', 2),
+(9, 'Retirar del fuego y escurrir. Dejar enfriar unos minutos y cuando todavía está caliente, agregar la mayonesa. Revolver todo para que se integre, salpimentar y continuar integrando.', 2),
+(10, 'Servir', 2),
+(11, 'Moler las galletitas con un pisapapas en un bol hasta que queden casi como polvo.', 3),
+(12, 'Mezclar con las galletas el dulce de leche, quedará una masa uniforme pero rústica.', 3),
+(13, 'Formar con la masa bolitas y pasarlas por coco rallado, colocar en una fuente.', 3),
+(14, 'Poner el excedente de coco sobre las bolitas y refrigerar 15 minutos. ¡Listo! Ya tenés tus trufas de dulce de leche.', 3),
+(15, 'Empezamos esta receta de muslo de pollo al pimentón poniendo al fuego una cazuela amplia con un poco de aceite de oliva.', 4),
+(16, 'Debemos pochar la cebolla a fuego suave, así que la añadimos picada con un poco de sal y dejamos que se sofría.', 4),
+(17, 'A continuación, añadimos el diente de ajo machacado y mezclamos todo muy bien.', 4),
+(18, 'Colocamos los muslos de pollo sobre la cebolla y dejamos que cojan color por ambos lados.', 4),
+(19, 'Cuando estén bien dorados, añadimos la cucharada de pimentón picante para que se cocine con el calor directo.', 4),
+(20, 'Una vez el pimentón suelte todo el sabor, que suelen ser un par de minutos, añadimos el caldo de pollo y la salsa de tomate frito.', 4),
+(21, 'Salpimentamos el muslo de pollo al pimentón al gusto y tapamos. Cocinamos durante unos treinta minutos a fuego medio-alto.', 4),
+(22, 'Una vez la carne esté cocinada, servimos.', 4),
+(23, 'Lo primero que tenemos que hacer es calentar el disco en leña, o carbón. Lo que tengas. El disco debe estar bien caliente.', 5),
+(24, 'Una vez que esté caliente (tengan cuidado y usen trapos secos para tocar el disco por favor se los pido) agregar un chorro de aceite desde afuera del disco hacia adentro.', 5),
+(25, 'Dorar las piezas de pollo, aproximadamente 5 minutos de cada lado. Sacarlas y reservarlas a un costado. Tiren el aceite que les quedó de más en el disco.', 5),
+(26, 'Pelar y cortar chiquito la cebolla y los dientes de ajo. La zanahoria en rodajas al igual que el puerro y la cebolla de verdeo. Poner las verduras en el disco y saltear por 5 minutos.', 5),
+(27, 'Agregar el vino blanco y la pimienta y lo dejamos reducir.', 5),
+(28, 'Cuando evaporó el alcohol (te vas a dar cuenta porque no larga olor a alcohol etílico) le agregamos una taza del caldo y remuevan. Sumamos el pollo que teníamos a un costado y cocinamos unos 10 minutos más o hasta que las zanahorias estén medianamente tiernas.', 5),
+(29, 'Cuando estén a media cocción le agregamos las papas peladas y cortadas en rodajas de 1 cm de espesor, el choclo cortado en tercios y agregamos el caldo que faltaba  y la crema. Tapamos y dejamos cocinar unos 15 o 20 minutos más.', 5),
+(30, 'Condimentamos el pollo al disco con el ají, el pimentón, el orégano y la sal 5 minutos antes de que termine la cocción.', 5);
 
 -- --------------------------------------------------------
 
@@ -104,19 +128,21 @@ INSERT INTO `pasos` (`idPasos`, `descripcion_pasos`, `idRecetaFK`) VALUES
 
 CREATE TABLE `recetas` (
   `idReceta` int(11) NOT NULL,
-  `nombre_receta` varchar(45) NOT NULL
+  `nombre_receta` varchar(45) NOT NULL,
+  `descripcion_receta` varchar(500) NOT NULL,
+  `imagen_receta` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `recetas`
 --
 
-INSERT INTO `recetas` (`idReceta`, `nombre_receta`) VALUES
-(1, 'Huevo frito'),
-(2, 'Ensalada rusa'),
-(3, 'Trufas de dulce de leche'),
-(4, 'Muslos de pollo al pimentón'),
-(5, 'Pollo al disco');
+INSERT INTO `recetas` (`idReceta`, `nombre_receta`, `descripcion_receta`, `imagen_receta`) VALUES
+(1, 'Huevo frito', 'El huevo frito es una forma muy rápida y bastante tradicional de hacer una fritura de un huevo. Su preparación apenas dura unos segundos y suele emplearse huevo de gallina. El huevo se introduce en aceite o grasa animal caliente.', 'huevofrito.jpg'),
+(2, 'Ensalada rusa', 'La ensalada rusa o ensaladilla rusa, también conocida originariamente como ensalada Olivier, es una ensalada típica de diversos países de Europa, Asia y América.', 'ensaladarusa.jpg'),
+(3, 'Trufas de dulce de leche', 'Las trufas de dulce de leche son una receta casi para niños y llegan de la mano del estilista más cool del país. Un programa divertido con la complicidad de quienes se conocen hace ya tiempo. Bon profit!', 'trufa.jpg'),
+(4, 'Muslos de pollo al pimentón', 'Lo mejor de esta receta de muslo de pollo al pimentón es que podemos hacerla tanto picante como no. Una receta muy rica.', 'pollopimenton.jpg'),
+(5, 'Pollo al disco', 'Pollo al disco es un plato argentino abundante que consiste en pollo y varias verduras cocinadas como un guiso en una sartén profunda descubierta a fuego abierto.', 'pollodisco.jpg');
 
 -- --------------------------------------------------------
 

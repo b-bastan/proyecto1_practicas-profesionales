@@ -83,6 +83,14 @@ main{
     color: rgb(0, 0, 0);
 }
 
+.caja_trasera a{
+    text-decoration: none;
+    color: #fff;;
+}
+
+.caja_trasera a:hover{
+    color: #fff;;
+}
 
 /*Formularios*/
 

@@ -23,12 +23,14 @@ $mensaje_recibido = $_REQUEST["mensaje"];
                         <h3>¿Ya tienes una cuenta?</h3>
                         <p>Inicia sesión para entrar en la página</p>
                         <button id="boton_iniciar_sesion">Iniciar sesión</button>
+                        O ir al <a href="../index.php">Home</a>
                     </div>
                     <div class="caja_trasera_register">
                         <h3>¿Aún no tienes una cuenta?</h3>
                         <p>Regístrate para que puedas iniciar sesión</p>
                         <button id="boton_registrarse">Registrarse</button>
-                        <button>Ir al Home</button>
+                        O ir al <a href="../index.php">Home</a>
+                        
                     </div>
                 </div>
 
@@ -41,6 +43,7 @@ $mensaje_recibido = $_REQUEST["mensaje"];
                         <input class="contenedor_login_register-input" type="password" placeholder="Contraseña" style="margin-bottom: 30px;" name="datos_password">
                         <input class="contenedor_login_register-submit" type="submit" value="Entrar">
                         <?php
+                            // Si es erroneo los datos ingresados tira un mensaje de sweet alerts de error
                             if ( trim($mensaje_recibido)<>""){  
                                 echo '<script> swal("PipoCooks", "Usuario o contraseña incorrectos", "warning"); </script>';
                             }

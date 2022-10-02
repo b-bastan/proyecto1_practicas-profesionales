@@ -27,12 +27,13 @@
 }
 
 .receta{
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    justify-items: center;
 }
 
 .descripcion{
-    padding-left: 20px;
+    padding: 30px 20px;
+    
 }
 
 .ingredientes{
@@ -65,6 +66,10 @@
 
 .nav a:hover{
     color: black;
+}
+
+.headerReceta{
+    text-align: center;
 }
 /* Responsive */
 
