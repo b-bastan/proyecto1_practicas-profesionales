@@ -14,4 +14,4 @@ Objetivo del proyecto: El proyecto es un libro de recetas en el que uno podrá b
 
 Backend: PHP
 Frontend: HTML5, CSS3, JS
-Database: MongoDB
+Database: MySQL
