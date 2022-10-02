@@ -24,6 +24,7 @@ $NyA = $nombre." ".$apellido;
         <script src="https://kit.fontawesome.com/359e1b0e60.js" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel="icon" href="img/gatoxd.png">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     </head>
     <body>
         <header class="header">
@@ -68,13 +69,18 @@ $NyA = $nombre." ".$apellido;
                     <button class="btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 50px; text-align: end;"><i class="fa-solid fa-circle-user"></i>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                      <li style="padding: 0.25rem 1rem;"><?php echo $NyA;
+                      <li style="padding: 0.25rem 1rem;"><?php
                       
-                      // Hay que crear if para que aparezca un boton de iniciar sesion en caso que no haya nada conectado
+                      if ($NyA == " "){
+                        echo "<li><a class='dropdown-item' href='./templates/login.php' style='display: flex; justify-self: right;'><i class='bi bi-person-plus-fill'></i>&nbsp&nbsp&nbspIniciar sesión</a></li>";
+                      } else if ($NyA != " "){
+                        echo $NyA;
+                        echo "<li><a class='dropdown-item' href='#'><i class='fa-solid fa-user'></i>&nbsp&nbsp&nbspTu perfil</a></li>
+                        <li><a class='dropdown-item' href='./templates/login.php' style='display: flex; justify-self: right;'><i class='fa-solid fa-arrow-right-from-bracket' style='padding-top: 5px ;'></i>&nbsp&nbsp&nbspCerrar sesión</a></li>";
+                      }
+                      // Si clickea cerrar sesión volver al login y desloguearse
                       
                       ?></li>
-                      <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user"></i>&nbsp&nbsp&nbspTu perfil</a></li>
-                      <li><a class="dropdown-item" href="./templates/login.php" style="display: flex; justify-self: right;"><i class="fa-solid fa-arrow-right-from-bracket" style="padding-top: 5px ;"></i>&nbsp&nbsp&nbspCerrar sesión</a></li>
                     </ul>
                 </div>
             </div>
@@ -89,49 +95,59 @@ $NyA = $nombre." ".$apellido;
                 <h3 class="subtitulo">Recetas más buscadas</h3>
                 <div class="contenedor-recetas">
                     <div class="card img" style="width: 18rem;">
-                        <a href="#" class="a">
-                            <img src="img/tacos.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Tacos Mexicanos</h5>
-                                <p class="card-text">Seamos felices, comamos tacos. El ABC de como hacer tacos, los mejores del mundo! La gastronomía mexicana me fascina y no quería dejar pasar ésta oportunidad, revisamos todo lo que necesitas para prepararlos en casa. Esta receta es lo más!</p>
+                      <?php
+                        echo "<a href='./templates/receta.php?idUsuario=$idUsuario' class='a'>
+                            <img src='img/tacos.jpg' class='card-img-top' alt='...'>
+                            <div class='card-body'>
+                                <h5 class='card-title'>Tacos Mexicanos</h5>
+                                <p class='card-text'>Seamos felices, comamos tacos. El ABC de como hacer tacos, los mejores del mundo! La gastronomía mexicana me fascina y no quería dejar pasar ésta oportunidad, revisamos todo lo que necesitas para prepararlos en casa. Esta receta es lo más!</p>
                             </div>
-                        </a>
+                        </a>";
+                        ?>
                     </div>
                     <div class="card img" style="width: 18rem;">
-                        <a href="#" class="a">
-                            <img src="img/tacos.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Tacos Mexicanos</h5>
-                                <p class="card-text">Seamos felices, comamos tacos. El ABC de como hacer tacos, los mejores del mundo! La gastronomía mexicana me fascina y no quería dejar pasar ésta oportunidad, revisamos todo lo que necesitas para prepararlos en casa. Esta receta es lo más!</p>
+                    <?php
+                        echo "<a href='./templates/receta.php?idUsuario=$idUsuario' class='a'>
+                            <img src='img/tacos.jpg' class='card-img-top' alt='...'>
+                            <div class='card-body'>
+                                <h5 class='card-title'>Tacos Mexicanos</h5>
+                                <p class='card-text'>Seamos felices, comamos tacos. El ABC de como hacer tacos, los mejores del mundo! La gastronomía mexicana me fascina y no quería dejar pasar ésta oportunidad, revisamos todo lo que necesitas para prepararlos en casa. Esta receta es lo más!</p>
                             </div>
-                        </a>
+                        </a>";
+                        ?>
                     </div>
                     <div class="card img" style="width: 18rem;">
-                        <a href="#" class="a">
-                            <img src="img/tacos.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Tacos Mexicanos</h5>
-                                <p class="card-text">Seamos felices, comamos tacos. El ABC de como hacer tacos, los mejores del mundo! La gastronomía mexicana me fascina y no quería dejar pasar ésta oportunidad, revisamos todo lo que necesitas para prepararlos en casa. Esta receta es lo más!</p>
+                    <?php
+                        echo "<a href='./templates/receta.php?idUsuario=$idUsuario' class='a'>
+                            <img src='img/tacos.jpg' class='card-img-top' alt='...'>
+                            <div class='card-body'>
+                                <h5 class='card-title'>Tacos Mexicanos</h5>
+                                <p class='card-text'>Seamos felices, comamos tacos. El ABC de como hacer tacos, los mejores del mundo! La gastronomía mexicana me fascina y no quería dejar pasar ésta oportunidad, revisamos todo lo que necesitas para prepararlos en casa. Esta receta es lo más!</p>
                             </div>
-                        </a>
+                        </a>";
+                        ?>
                     </div>
                     <div class="card img" style="width: 18rem;">
-                        <a href="#" class="a">
-                            <img src="img/tacos.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Tacos Mexicanos</h5>
-                                <p class="card-text">Seamos felices, comamos tacos. El ABC de como hacer tacos, los mejores del mundo! La gastronomía mexicana me fascina y no quería dejar pasar ésta oportunidad, revisamos todo lo que necesitas para prepararlos en casa. Esta receta es lo más!</p>
+                    <?php
+                        echo "<a href='./templates/receta.php?idUsuario=$idUsuario' class='a'>
+                            <img src='img/tacos.jpg' class='card-img-top' alt='...'>
+                            <div class='card-body'>
+                                <h5 class='card-title'>Tacos Mexicanos</h5>
+                                <p class='card-text'>Seamos felices, comamos tacos. El ABC de como hacer tacos, los mejores del mundo! La gastronomía mexicana me fascina y no quería dejar pasar ésta oportunidad, revisamos todo lo que necesitas para prepararlos en casa. Esta receta es lo más!</p>
                             </div>
-                        </a>
+                        </a>";
+                        ?>
                     </div>
                     <div class="card img" style="width: 18rem;">
-                        <a href="#" class="a">
-                            <img src="img/tacos.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Tacos Mexicanos</h5>
-                                <p class="card-text">Seamos felices, comamos tacos. El ABC de como hacer tacos, los mejores del mundo! La gastronomía mexicana me fascina y no quería dejar pasar ésta oportunidad, revisamos todo lo que necesitas para prepararlos en casa. Esta receta es lo más!</p>
+                    <?php
+                        echo "<a href='./templates/receta.php?idUsuario=$idUsuario' class='a'>
+                            <img src='img/tacos.jpg' class='card-img-top' alt='...'>
+                            <div class='card-body'>
+                                <h5 class='card-title'>Tacos Mexicanos</h5>
+                                <p class='card-text'>Seamos felices, comamos tacos. El ABC de como hacer tacos, los mejores del mundo! La gastronomía mexicana me fascina y no quería dejar pasar ésta oportunidad, revisamos todo lo que necesitas para prepararlos en casa. Esta receta es lo más!</p>
                             </div>
-                        </a>
+                        </a>";
+                        ?>
                     </div>
                 </div>
             </div>
