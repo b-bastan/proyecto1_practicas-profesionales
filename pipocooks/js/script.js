@@ -1,7 +1,7 @@
 // Ejecutando funciones
 document.getElementById("boton_iniciar_sesion").addEventListener("click", iniciarSesion);
 document.getElementById("boton_registrarse").addEventListener("click", register);
-window.addEventListener("resize", anchoPage);
+//window.addEventListener("resize", anchoPage);
 
 // Declarando variables
 var formulario_login = document.querySelector(".formulario_login");
