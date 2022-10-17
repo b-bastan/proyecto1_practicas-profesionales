@@ -1,0 +1,70 @@
+header {
+    height: 13vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#contenedor-todo {
+    margin: 0 3%;
+    background-color: rgb(148, 148, 148);
+    height: 84vh;
+    display: grid;
+    grid-template-areas: "username icono" "datos datos";
+    grid-template-columns: 80% 20%;
+    grid-template-rows: 30% 70%;
+}
+
+.username {
+    display: flex;
+    align-items: center;
+    padding-left: 2em;
+    grid-area: username;
+    font-size: 20px;
+    background-color: rgba(255, 0, 0, 0.397);
+}
+
+.username .fa-solid {
+    margin-top: -6px;
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+.icono-usuario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: icono;
+    background-color: rgba(0, 255, 255, 0.377);
+}
+
+.icono-usuario .fa-pen-to-square {
+    margin-top: -20%;
+    font-size: 2.5em;
+}
+
+.icono-usuario .fa-circle-user {
+    font-size: 6em;
+}
+
+.datos-de-acceso {
+    display: flex;
+    flex-direction: column;
+    border: 3px solid green;
+    border-radius: 3em;
+    grid-area: datos;
+    background-color: rgba(0, 128, 0, 0.315);
+}
+
+.datos-de-acceso-password,.datos-de-acceso-email,.datos-de-acceso-nombre {
+    width: 70%;
+    margin: 0 15%;
+    display: grid;
+    grid-template-areas: "auto auto";
+    grid-template-columns: 40% 60%;
+}
+
+.fa-solid {
+    color: rgb(175, 99, 0);
+    color: black;
+}
