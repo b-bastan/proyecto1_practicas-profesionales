@@ -99,7 +99,7 @@ while($resultadoReceta = $consultaReceta->fetch(PDO::FETCH_ASSOC))
                                 echo "<li><a class='dropdown-item' href='#'><i class='fa-solid fa-user'></i>&nbsp&nbsp&nbspTu perfil</a></li>
                                 <li><a class='dropdown-item' href='./templates/login.php' style='display: flex; justify-self: right;'><i class='fa-solid fa-arrow-right-from-bracket' style='padding-top: 5px ;'></i>&nbsp&nbsp&nbspCerrar sesión</a></li>";
                             }
-                      // Si clickea cerrar sesión volver al login y desloguearse
+                        // Si clickea cerrar sesión volver al login y desloguearse
                         
                         ?>
                         </li>
@@ -108,11 +108,13 @@ while($resultadoReceta = $consultaReceta->fetch(PDO::FETCH_ASSOC))
             </div>
         </header>
         <main class="main">
-            <div class="buscador">
-                <input type="text" placeholder="Buscar" required>
+            <form class="buscador">
+                <input class="buscador-input" type="text" placeholder="Buscar" name="datos_busqueda" required>
+                <input class="input-search" type="submit" value="">
+                <!-- 
                 <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-                <a href="#"><i class="fa-solid fa-caret-down"></i></a>
-            </div>
+                <a href="#"><i class="fa-solid fa-caret-down"></i></a> -->
+            </form>
             <div>
                 <h3 class="subtitulo">Recetas más buscadas</h3>
                 <div class="contenedor-recetas">

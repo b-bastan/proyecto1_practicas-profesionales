@@ -46,7 +46,7 @@ main{
 }
 
 .caja_trasera div{
-    margin: 100px 40px;
+    margin: 50px 40px;
     color: white;
     transition: all 500ms;
 }

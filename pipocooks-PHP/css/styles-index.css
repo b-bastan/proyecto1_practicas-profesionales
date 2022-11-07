@@ -96,14 +96,27 @@ ul {
     justify-content: center;
     align-items: center;
 }
-.buscador input{
+.buscador-input{
     width: 300px;
     height: 40px;
     padding: 0 20px;
     font-size: 18px;
     outline: none;
     border: 2px solid silver;
-    border-radius: 30px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+.input-search{
+    background-image: url("../img/icon-lupa.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 50px;
+    height: 40px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border: 2px solid silver;
+
 }
 .fa-magnifying-glass{
     position: relative;

@@ -1,0 +1,53 @@
+header {
+    height: 13vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#contenedor-todo {
+    margin: 0 3%;
+    background-color: rgb(148, 148, 148);
+    height: 84vh;
+    display: grid;
+    grid-template-areas: "user settings" "user recipes";
+    grid-template-columns: 45% 45%;
+    column-gap: 10%;
+    grid-template-rows: 45% 45%;
+    row-gap: 10%;
+}
+
+.user {
+    border: 5px solid red;
+    border-radius: 2em;
+    background-color: rgb(197, 95, 0);
+    grid-area: user;
+}
+
+.settings {
+    border: 5px solid red;
+    border-radius: 2em;
+    background-color: rgb(197, 95, 0);
+    grid-area: settings;
+}
+
+.recipes {
+    border: 5px solid red;
+    border-radius: 2em;
+    background-color: rgb(197, 95, 0);
+    grid-area: recipes;
+}
+
+.recipes-list-item {
+    display: flex;
+    align-items: center;
+}
+
+.recipes-list-item i {
+    margin: 5px .5em;
+    font-size: 24px;
+}
+
+.recipes-list-item p {
+    margin: 0;
+}
