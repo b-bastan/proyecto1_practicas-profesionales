@@ -24,14 +24,17 @@ header {
 /* Seccion usuario */
 
 .user {
+    display: flex;
+    flex-direction: column;
     border: 5px solid hsl(27, 100%, 20%);;
     border-radius: 2em;
     background-color: #e77400e8;
     grid-area: user;
+
 }
 
 .profile-photo {
-    border-radius: 2em 2em 0 0;
+    border-radius: 1.5em 1.5em 0 0;
     width: 100%;
     aspect-ratio: 2/1;
     border-bottom: 5px solid hsl(27, 100%, 20%);
@@ -39,13 +42,14 @@ header {
 
 .user p {
     font-size: 18px;
-    margin-top: 10px;
-    margin-left: 10px;
+    margin: 3vh 0 3vh 10px;
 }
 
 /* Seccion configuracion */
 
 .settings {
+    min-height: 240px;
+    height: fit-content;
     border: 5px solid hsl(27, 100%, 20%);;
     border-radius: 2em;
     background-color: #e77400e8;
@@ -114,6 +118,10 @@ header {
     margin-top: 15px;
 }
 
+#modif-pass-verif {
+    margin-bottom: 15px;
+}
+
 .modif-pass-inp::placeholder {
     padding-left: 20px;
 }
@@ -159,5 +167,33 @@ header {
     width: fit-content;
 }
 
-/*Hasta 768px se ve bien, no hace falta responsive, mentira, ajustar un poco los espacios a la izquierda de recipes-list*/
+@media (max-width: 1025px) {
+    .recipes-list-item p {
+        margin-left: 10px;
+    }
+}
 
+@media (max-width: 769px) {
+    #contenedor-todo {
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+    }
+
+    .user, .settings, .recipes {
+        margin-bottom: 1em;
+    }
+
+    .user {
+        height: fit-content;
+    }
+
+    .settings {
+        min-height: fit-content;
+    }
+
+    .recipes {
+        height: fit-content;
+        max-height: 160px;
+    }
+}
