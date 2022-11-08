@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 02-10-2022 a las 22:50:51
+-- Tiempo de generación: 08-11-2022 a las 13:32:01
 -- Versión del servidor: 8.0.17
 -- Versión de PHP: 7.3.10
 
@@ -138,11 +138,11 @@ CREATE TABLE `recetas` (
 --
 
 INSERT INTO `recetas` (`idReceta`, `nombre_receta`, `descripcion_receta`, `imagen_receta`) VALUES
-(1, 'Huevo frito', 'El huevo frito es una forma muy rápida y bastante tradicional de hacer una fritura de un huevo. Su preparación apenas dura unos segundos y suele emplearse huevo de gallina. El huevo se introduce en aceite o grasa animal caliente.', 'huevofrito.jpg'),
-(2, 'Ensalada rusa', 'La ensalada rusa o ensaladilla rusa, también conocida originariamente como ensalada Olivier, es una ensalada típica de diversos países de Europa, Asia y América.', 'ensaladarusa.jpg'),
-(3, 'Trufas de dulce de leche', 'Las trufas de dulce de leche son una receta casi para niños y llegan de la mano del estilista más cool del país. Un programa divertido con la complicidad de quienes se conocen hace ya tiempo. Bon profit!', 'trufa.jpg'),
-(4, 'Muslos de pollo al pimentón', 'Lo mejor de esta receta de muslo de pollo al pimentón es que podemos hacerla tanto picante como no. Una receta muy rica.', 'pollopimenton.jpg'),
-(5, 'Pollo al disco', 'Pollo al disco es un plato argentino abundante que consiste en pollo y varias verduras cocinadas como un guiso en una sartén profunda descubierta a fuego abierto.', 'pollodisco.jpg');
+(1, 'HUEVO FRITO', 'El huevo frito es una forma muy rápida y bastante tradicional de hacer una fritura de un huevo. Su preparación apenas dura unos segundos y suele emplearse huevo de gallina. El huevo se introduce en aceite o grasa animal caliente.', 'huevofrito.jpg'),
+(2, 'ENSALADA RUSA', 'La ensalada rusa o ensaladilla rusa, también conocida originariamente como ensalada Olivier, es una ensalada típica de diversos países de Europa, Asia y América.', 'ensaladarusa.jpg'),
+(3, 'TRUFAS DE DULCE DE LECHE', 'Las trufas de dulce de leche son una receta casi para niños y llegan de la mano del estilista más cool del país. Un programa divertido con la complicidad de quienes se conocen hace ya tiempo. Bon profit!', 'trufa.jpg'),
+(4, 'MUSLOS DE POLLO AL PIMENTON', 'Lo mejor de esta receta de muslo de pollo al pimentón es que podemos hacerla tanto picante como no. Una receta muy rica.', 'pollopimenton.jpg'),
+(5, 'POLLO AL DISCO', 'Pollo al disco es un plato argentino abundante que consiste en pollo y varias verduras cocinadas como un guiso en una sartén profunda descubierta a fuego abierto.', 'pollodisco.jpg');
 
 -- --------------------------------------------------------
 
