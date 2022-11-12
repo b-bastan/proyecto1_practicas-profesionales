@@ -1,0 +1,300 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+::selection {
+    background-color: rgb(175, 99, 0);
+    color: white    ;
+}
+
+/* General */
+
+.container {
+    width: 60%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    margin: 10px 40px;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.fa-solid {
+    cursor: pointer;
+}
+
+.fa-trash-can {
+    color: black;
+}
+
+button {
+    cursor: pointer;
+    background-color: white;
+}
+
+section {
+    margin-bottom: 1em;
+}
+
+input {
+    outline: none;
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 10px 20px;
+    border: none;
+}
+
+/* Header */
+
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#dropdownMenuButton1 {
+    border: none;
+}
+
+.nav-derecha {
+    display: flex;
+    flex-direction: row;
+}
+
+.publicar-receta {
+    border: none;
+    font-size: 1em;
+    background-color: rgb(221, 167, 101);
+    color: white;
+    border-radius: 1.5em;
+    padding: 0 1.8em;
+    height: 2.2em;
+    align-self: center;
+    margin-right: 1.5em;
+}
+
+.btn {
+    font-size: 50px; 
+}
+
+/* Arrastrar imágenes */
+
+.arrastrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid hsla(0, 0%, 50%, 0.473);
+    border-radius: 2em;
+    padding: 2rem 0;
+    cursor: pointer;
+}
+
+.arrastrar__img {
+    opacity: 40%;
+    width: 5em;
+}
+
+.arrastrar h3{
+    opacity: 40%;
+    margin-top: .5em;
+}
+
+/* Info receta */
+
+#nombreReceta {
+    font-size: 2em;
+}
+
+#descripcion {
+    font-size: 1.5em;
+}
+
+#procedencia {
+    font-size: 1.1em;
+}
+
+.info-receta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.info-receta button {
+    width: 100%;
+    margin-bottom: 1em;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5em 1em;
+}
+
+/* Ingredientes */
+
+#ingredientes .container {
+    padding: 10px 20px;
+}
+
+#ingredientes h1 {
+    font-size: 30px;
+    margin-bottom: .7em;
+    margin-top: -.7em;
+}
+
+.ingredientes__input {
+    display: flex;
+    flex-direction: column;
+}
+
+.ingredientes__input input {
+    margin: 0 auto;
+}
+
+.ingredientes__input--ingrediente {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: .5em;
+}
+
+.ingredientes__input--seccion {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: .5em;
+    border-top: 1px solid rgb(105, 105, 105);
+}
+
+#ingredientes .fa-solid , #pasos .fa-solid{
+    opacity: 50%;
+}
+
+.ingredientes__crear {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ingredientes__crear button {
+    border: 0px;
+    margin: 0 0.8em;
+    font-size: 1.2em;
+}
+
+/* Pasos */
+
+.pasos__paso {
+    display: flex;
+    flex-direction: column;
+}
+
+.div {
+    display: flex;
+    padding: 10px 20px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.pasos__paso--parte1, .pasos__paso--parte2, .pasos__paso--parte3 {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: .5em;
+}
+
+.pasos__paso--parte2 {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.pasos__crear {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pasos__crear button {
+    border: 0px;
+    margin: 0 0.8em;
+    font-size: 1.2em;
+}
+
+.pasos__paso--parte1 :first-child {
+    background-color: rgb(212, 141, 59);
+    border-radius: 50px;
+    color: antiquewhite;
+    margin-bottom: .5em;
+}
+
+@media screen and (max-width: 956px){
+    /* Header */
+    .nav h1{
+        font-size: 30px;
+    }
+
+    .btn {
+        font-size: 40px; 
+        text-align: end;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .container {
+        width: 100%;
+    }
+
+    /* Header */
+    .nav h1{
+        font-size: 2em;
+    }
+
+    header {
+        margin-bottom: 1em;
+    }
+
+    .publicar-receta {
+        padding: 0 1em;
+        height: 2em;
+    }
+
+    .btn {
+        font-size: 30px; 
+        text-align: end;
+    }
+
+    /* info-receta */
+
+    #nombreReceta {
+        font-size: 1.5em;
+    }
+
+    #descripcion {
+        font-size: 1.3em;
+    }
+
+    #procedencia {
+        font-size: 1em;
+    }
+
+    /* Ingredientes */
+
+    #ingredientes h1 {
+        font-size: 1.7em;
+    }
+}

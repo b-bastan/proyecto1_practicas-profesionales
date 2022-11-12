@@ -21,10 +21,9 @@ body{
 }
 
 main{
-    width: 100%;
-    padding: 50px;
+    display: flex;
+    height: 100vh;
     margin: auto;
-    margin-top: 100px;
 }
 
 .contenedor_todo{
@@ -46,7 +45,7 @@ main{
 }
 
 .caja_trasera div{
-    margin: 100px 40px;
+    margin: 50px 40px;
     color: white;
     transition: all 500ms;
 }
@@ -83,6 +82,14 @@ main{
     color: rgb(0, 0, 0);
 }
 
+.caja_trasera a{
+    text-decoration: none;
+    color: #fff;;
+}
+
+.caja_trasera a:hover{
+    color: #fff;;
+}
 
 /*Formularios*/
 
@@ -112,7 +119,7 @@ main{
     margin-bottom: 20px;
 }
 
-.contenedor_login_register form input{
+.contenedor_login_register-input{
     width: 100%;
     margin-top: 20px;
     padding: 10px;
@@ -123,17 +130,22 @@ main{
     border-radius: 25px;
 }
 
-.contenedor_login_register form a{
+.contenedor_login_register-submit{
+    display: flex;
     padding: 10px 40px;
-    margin-top: 40px;
+    margin: auto;
     font-size: 14px;
-    border: none;
-    background: #F7630C;
+    background-color: #F7630C;
     font-weight: 600;
-    cursor: pointer;
     color: white;
-    outline: none;
     transition: 700ms;
+    border: 2px #F7630C solid;
+}
+
+.contenedor_login_register-submit:hover{
+    background: #fff;
+    
+    color: #F7630C
 }
 
 .formulario_login{
@@ -238,11 +250,5 @@ main{
 
     #boton_registrarse, #boton_iniciar_sesion {
         max-width: 100% !important;
-    }
-}
-
-@media screen and (max-width: 281px) {
-    #boton_registrarse, #boton_iniciar_sesion {
-        width: 140px !important;
     }
 }

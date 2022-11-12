@@ -27,12 +27,13 @@
 }
 
 .receta{
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    justify-items: center;
 }
 
 .descripcion{
-    padding-left: 20px;
+    padding: 30px 20px;
+    
 }
 
 .ingredientes{
@@ -58,14 +59,26 @@
     width: 70%;
 }
 
+.nav a{
+    text-decoration: none;
+    color: black;
+}
+
+.nav a:hover{
+    color: black;
+}
+
+.headerReceta{
+    text-align: center;
+}
 /* Responsive */
 
 @media screen and (max-width: 1024px) {
 
     /* Header */
 
-    .nav {
-        margin: 0 17px;
+    .header img{
+        height: 100px;
     }
 
     /* General */
@@ -82,6 +95,9 @@
 
     .receta{
         flex-direction: column;
+    }
+    .receta img{
+        height: 150px;
     }
 
     .descripcion {

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuario</title>
+    <link rel="stylesheet" href="../css/styles-usuario.css">
+    <script src="https://kit.fontawesome.com/359e1b0e60.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1>Pipo Cook's</h1>
+    </header>
+    <main id="contenedor-todo">
+        <div class="user">
+            <img src="/pipocooks/img/happy-person.png" alt="Imagen de perfil" class="profile-photo">
+            <p>Nombre completo: <span> John Johnson</span></p>
+            <p>Nombre de usuario: <span> John Johnson</span></p>
+            <p>Contraseña: <span>PipoYLola1234</span></p>
+            <!-- <i class="fa-solid fa-pen-to-square"></i> -->
+        </div>
+        <div class="settings">
+            <h3>Configuración</h3>
+            <div class="settings-conf">
+                <div class="settings-conf-item">
+                    <p>Cambiar foto de perfil</p>
+                    <i class="fa-solid fa-pen-to-square" id="modif-photo-off" onclick="showPhoto()"></i>
+                    <i class="fa-solid fa-xmark" id="modif-photo-on" onclick="hidePhoto()"></i>
+                </div>
+
+                <div id="modif-profile-photo">
+                    <img src="/pipocooks/img/camara.png" alt="" class="modif-profile-photo-img">
+                    <p>Arrastre una imagen</p>
+                </div>
+                <!-- <div class="settings-conf-item">
+                    <p>Editar foto de perfil</p>
+                    <i class="fa-solid fa-pen-to-square"></i>
+                </div> -->
+                <div class="settings-conf-item">
+                    <p>Cambiar contraseña</p>
+                    <i class="fa-solid fa-pen-to-square" id="modif-pass-off" onclick="showPassChange()"></i>
+                    <i class="fa-solid fa-xmark" id="modif-pass-on" onclick="hidePassChange()"></i>
+                </div>
+
+                <div id="modif-pass-box">
+                    <input type="password" class="modif-pass-inp" id="modif-pass-input" placeholder="Cambia la contraseña"> <!-- outline -->
+                    <input type="password" class="modif-pass-inp" id="modif-pass-verif" placeholder="Verifica la contraseña">
+                </div>
+            </div>
+        </div>
+        <div class="recipes">
+            <h3>Mis recetas</h3>
+            <div class="recipes-list">
+                <div class="recipes-list-item">
+                    <i class="fa-solid fa-check"></i>
+                    <p>Tacos mexicanos</p>
+                    <a href="./receta.html"><i class="fa-solid fa-eye"></i></a>
+                </div>
+                <div class="recipes-list-item">
+                    <i class="fa-solid fa-check"></i>
+                    <p>Receta de ravioles</p>
+                    <a href="./receta.html"><i class="fa-solid fa-eye"></i></a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="/pipocooks/js/usuario.js"></script>
+</body>
+</html>
