@@ -72,67 +72,30 @@ while($resultadoPasos = $consultaPasos->fetch(PDO::FETCH_ASSOC))
 </head>
 
 <body>
-    <header class="header">
-        <div class="nav" style="display: flex; justify-content: space-between;">
-            <button class="btn btn-primary quitacolor" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-                <i class="fa-solid fa-bars" style="font-size: 50px;"></i>
+<header class="header">
+        <img src="../img/logoTransparente.png" width="150px" alt="">
+        <a href="../index.php?idUsuario=<?php echo $idUsuario; ?>" style="color: aliceblue !important; text-decoration: none !important;"><h1>Pipo Cook's</h1></a>
+        <div class="dropdown" style="width: 163px;">
+            <button class="btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 50px; text-align: end;"><i style="color: white;" class="fa-solid fa-circle-user"></i>
             </button>
-            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-                <div class="offcanvas-header" style="justify-content: right;">
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body" style="margin-top: -30px;">
-                    <ul class="menu-general">
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                Recetas
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="#">Bebidas</a></li>
-                                <li><a class="dropdown-item" href="#">Arroces</a></li>
-                                <li><a class="dropdown-item" href="#">Ensaladas</a></li>
-                            </ul>
-                        </div>
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                Recetas dulces
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="#">Tortas y budines</a></li>
-                                <li><a class="dropdown-item" href="#">Galletas</a></li>
-                                <li><a class="dropdown-item" href="#">Ensaladas</a></li>
-                            </ul>
-                        </div>
-                        <li style="height: 31.5px;">Más recetas</li>
-                        <li>Sobre nosotros</li>
-                        <li>Contacto</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <a href='../index.php?idUsuario=<?php echo $idUsuario ?>'><h1>Pipo Cook's</h1></a>
-            
-            <div class="dropdown">
-                <button class="btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 50px; text-align: end;"><i class="fa-solid fa-circle-user"></i>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li style="padding: 0.25rem 1rem;">
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li style="padding: 0.25rem 1rem;">
                     <?php
 
-                        // Si no estas logueado va a aparecer un boton para iniciar sesion
-                        if ($NyA == " ") {
-                            echo "<li><a class='dropdown-item' href='./login.php' style='display: flex; justify-self: right;'><i class='bi bi-person-plus-fill'></i>&nbsp&nbsp&nbspIniciar sesión</a></li>";
+                    // Si no estas logueado va a aparecer un boton para iniciar sesion
+                    if ($NyA == " ") {
+                        echo "<li><a class='dropdown-item' href='./templates/login.php' style='display: flex; justify-self: right;'><i class='bi bi-person-plus-fill'></i>&nbsp&nbsp&nbspIniciar sesión</a></li>";
                         // Si estas logueado van a aparecer un boton para cerrar sesion y otro para ver mi Perfil
-                        } else if ($NyA != " ") {
-                            echo $NyA;
-                            echo "<li><a class='dropdown-item' href='#'><i class='fa-solid fa-user'></i>&nbsp&nbsp&nbspTu perfil</a></li><li><a class='dropdown-item' href='./login.php' style='display: flex; justify-self: right;'><i class='fa-solid fa-arrow-right-from-bracket' style='padding-top: 5px ;'></i>&nbsp&nbsp&nbspCerrar sesión</a></li>";
-                        }
-                        // Si clickea cerrar sesión volver al login y desloguearse
+                    } else if (trim($NyA) != "") {
+                        echo $NyA;
+                        echo "<li><a class='dropdown-item' href='./usuario.php?idUsuario=" . $idUsuario . "'><i class='fa-solid fa-user'></i>&nbsp&nbsp&nbspTu perfil</a></li>
+                                <li><a class='dropdown-item' href='./templates/login.php' style='display: flex; justify-self: right;'><i class='fa-solid fa-arrow-right-from-bracket' style='padding-top: 5px ;'></i>&nbsp&nbsp&nbspCerrar sesión</a></li>";
+                    }
+                    // Si clickea cerrar sesión volver al login y desloguearse
 
                     ?>
-                    </li>
-                </ul>
-            </div>
+                </li>
+            </ul>
         </div>
     </header>
     <main class="main espaciado">
@@ -140,20 +103,6 @@ while($resultadoPasos = $consultaPasos->fetch(PDO::FETCH_ASSOC))
             <h2><?php
             // Se empieza a cargar cada dato de la receta con los echo (Es como el DOM de js, pero individualmente)
             echo $nombreReceta; ?></h2>
-            <!--<div class="valoracion">
-                    <img src="/img/happy-person.png" alt="happy person" class="perfil">
-                    <div class="mas-info">
-                        <div>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half"></i>
-                        </div>
-                        <hr>
-                        <p>Por John Johnson, Cocinere de Pipo Cook's. Actualizado: 21 junio 2022</p>
-                    </div>    
-                </div>-->
         </div>
         <div class="receta">
             <img src="../img/<?php echo $imagenReceta; ?>" alt="<?php echo $nombreReceta; ?>" height="350px">
@@ -185,20 +134,35 @@ while($resultadoPasos = $consultaPasos->fetch(PDO::FETCH_ASSOC))
             </ol>
             
         </section>
-        <section class="comentarios">
-            <h3>Comentarios</h3>
-            <!--<section class="comment">
-                    <div class="usuario-comentario">
-                        <img src="/img/happy-person.png" alt="happy person" class="perfil-small" style="grid-area: foto;">
-                        <p style="grid-area: nombre;" >John Johnson</p>
-                    </div>
-                    <hr>
-                    <p>This is the example text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error aspernatur alias, ab ut nam maiores quod nesciunt nemo. Adipisci consectetur officia molestias laborum omnis necessitatibus sint ab sunt atque amet.</p>
-                </section>-->
-            <h4>Proximamente</h4>
-        </section>
     </main>
-    <footer></footer>
+    <footer class="text-center text-white" style="background-color: #ff946c;">
+        <!-- Grid container -->
+        <div class="container pt-4">
+            <section class="mb-4">
+                <!-- Facebook -->
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-facebook-f"></i></a>
+
+                <!-- Twitter -->
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-twitter"></i></a>
+
+                <!-- Google -->
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-google"></i></a>
+
+                <!-- Instagram -->
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-instagram"></i></a>
+
+                <!-- Linkedin -->
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-linkedin"></i></a>
+                <!-- Github -->
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-github"></i></a>
+            </section>
+        </div>
+
+        <div class="text-center text-light p-3 footer" style="background-color: chocolate;">
+            © 2022 Copyright: CCP Corp.
+        </div>
+
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
 

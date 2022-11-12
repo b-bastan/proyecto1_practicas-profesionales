@@ -7,9 +7,7 @@
 }
 
 body{
-    display: flex;
-    flex-direction: column;
-    height: max-content;
+    background-color: #f4f5f7 !important;
 }
 
 ::selection {
@@ -41,6 +39,16 @@ ul {
 }
 
 /* ----- MENÚ ----- */
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color:chocolate;
+    margin-bottom: 20px;
+    color: #f4f5f7;
+}
+
 .menu-general {
     font-size: 19px;
 }
@@ -57,7 +65,7 @@ ul {
     border: none;
     padding: 0;
     font-size: 19px;
-    color: black;
+    color: white;
 }
 
 .menu-general .dropdown .dropdown-menu .dropdown-item{
@@ -81,7 +89,7 @@ ul {
 }
 .contenedor-recetas{
     display: flex; 
-    justify-content: space-between; 
+    justify-content: flex-start; 
     flex-wrap: wrap;
     margin: 20px 40px;
 }
@@ -90,7 +98,14 @@ ul {
     box-shadow: none !important;
 }
 
+.card{
+    margin: 10px !important;
+}
+
 /* ----- MAIN ----- */
+.main{
+    height: 100vh;
+}
 .buscador{
     display: flex; 
     justify-content: center;
@@ -155,6 +170,9 @@ ul {
         width: 30%;
         margin: 0 auto 1em auto;
     }
+    .main{
+        height: auto !important;
+    }
 }
 
 @media (max-width: 768px) {
@@ -176,6 +194,7 @@ ul {
     .menu-general {
         padding: 0 0 0 16px;
     }
+    
 }
 
 @media (max-width: 480px) {
@@ -192,6 +211,10 @@ ul {
 
     .offcanvas{
         width: 200px !important;
+    }
+
+    .main{
+        height: auto !important;
     }
 }
 

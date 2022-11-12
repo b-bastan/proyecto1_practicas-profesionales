@@ -77,8 +77,8 @@
 
     /* Header */
 
-    .nav {
-        margin: 0 17px;
+    .header img{
+        height: 100px;
     }
 
     /* General */
@@ -95,6 +95,9 @@
 
     .receta{
         flex-direction: column;
+    }
+    .receta img{
+        height: 150px;
     }
 
     .descripcion {

@@ -13,9 +13,10 @@ $mensaje_recibido = $_REQUEST["mensaje"];
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
         <link rel="icon" href="../img/gatoxd.png">
+        
     </head>
     <body>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <main>
             <div class="contenedor_todo">
                 <div class="caja_trasera">
@@ -39,13 +40,13 @@ $mensaje_recibido = $_REQUEST["mensaje"];
                     <!--Login-->
                     <form action="valida_login.php" class="formulario_login" method="post">
                         <h2>Iniciar sesión</h2>
-                        <input class="contenedor_login_register-input" type="text" placeholder="Correo electrónico" name="datos_usuario">
-                        <input class="contenedor_login_register-input" type="password" placeholder="Contraseña" style="margin-bottom: 30px;" name="datos_password">
+                        <input class="contenedor_login_register-input" type="email" placeholder="Correo electrónico" name="datos_usuario" required>
+                        <input class="contenedor_login_register-input" type="password" placeholder="Contraseña" style="margin-bottom: 30px;" name="datos_password" required>
                         <input class="contenedor_login_register-submit" type="submit" value="Entrar">
                         <?php
                             // Si es erroneo los datos ingresados tira un mensaje de sweet alerts de error
                             if ( trim($mensaje_recibido)<>""){  
-                                echo '<script> swal("PipoCooks", "Usuario o contraseña incorrectos", "warning"); </script>';
+                                echo '<script>  Swal.fire("PipoCooks", "Email o contraseña incorrectos", "error") </script>';
                             }
                         ?> 
                         
@@ -56,10 +57,10 @@ $mensaje_recibido = $_REQUEST["mensaje"];
                     <!--Register-->
                     <form action="registrarse.php" class="formulario_register" method="post">
                         <h2>Registrarse</h2>
-                        <input class="contenedor_login_register-input" type="text" placeholder="Nombre" name="nombreReg">
-                        <input class="contenedor_login_register-input" type="text" placeholder="Apellido" name="apellidoReg">
-                        <input class="contenedor_login_register-input" type="text" placeholder="Correo electrónico" name="correoReg">
-                        <input class="contenedor_login_register-input" type="password" placeholder="Contraseña" style="margin-bottom: 30px;" name="contraReg">
+                        <input class="contenedor_login_register-input" type="text" placeholder="Nombre" name="nombreReg" required>
+                        <input class="contenedor_login_register-input" type="text" placeholder="Apellido" name="apellidoReg" required>
+                        <input class="contenedor_login_register-input" type="email" placeholder="Correo electrónico" name="correoReg" required>
+                        <input class="contenedor_login_register-input" type="password" placeholder="Contraseña" style="margin-bottom: 30px;" name="contraReg" required>
                         <input class="contenedor_login_register-submit" type="submit" value="Registrarse">
                     </form>
 
@@ -67,10 +68,8 @@ $mensaje_recibido = $_REQUEST["mensaje"];
                 </div>
             </div>
         </main>
-        <footer>
         
-        </footer>
+        
         <script src="../js/script.js"></script>
-        
     </body>
 </html>
