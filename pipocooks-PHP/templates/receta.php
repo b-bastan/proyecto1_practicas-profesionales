@@ -67,7 +67,7 @@ while($resultadoPasos = $consultaPasos->fetch(PDO::FETCH_ASSOC))
     <link rel="stylesheet" href="../css/styles-receta.css">
     <script src="https://kit.fontawesome.com/359e1b0e60.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="icon" href="../img/gatoxd.png">
+    <link rel="shortcut icon" href="../img/logoTransparente.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
 
@@ -84,7 +84,7 @@ while($resultadoPasos = $consultaPasos->fetch(PDO::FETCH_ASSOC))
 
                     // Si no estas logueado va a aparecer un boton para iniciar sesion
                     if ($NyA == " ") {
-                        echo "<li><a class='dropdown-item' href='./templates/login.php' style='display: flex; justify-self: right;'><i class='bi bi-person-plus-fill'></i>&nbsp&nbsp&nbspIniciar sesión</a></li>";
+                        echo "<li><a class='dropdown-item' href='./login.php' style='display: flex; justify-self: right;'><i class='bi bi-person-plus-fill'></i>&nbsp&nbsp&nbspIniciar sesión</a></li>";
                         // Si estas logueado van a aparecer un boton para cerrar sesion y otro para ver mi Perfil
                     } else if (trim($NyA) != "") {
                         echo $NyA;

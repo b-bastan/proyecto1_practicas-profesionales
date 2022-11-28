@@ -103,9 +103,6 @@ ul {
 }
 
 /* ----- MAIN ----- */
-.main{
-    height: 100vh;
-}
 .buscador{
     display: flex; 
     justify-content: center;
