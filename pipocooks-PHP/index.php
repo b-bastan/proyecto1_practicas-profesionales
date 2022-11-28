@@ -121,22 +121,11 @@ while ($resultadoIngredientes = $consultaIngredientes->fetch(PDO::FETCH_ASSOC)) 
         <!-- Grid container -->
         <div class="container pt-4">
             <section class="mb-4">
-                <!-- Facebook -->
-                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-facebook-f"></i></a>
-
-                <!-- Twitter -->
-                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-twitter"></i></a>
-
-                <!-- Google -->
-                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-google"></i></a>
-
-                <!-- Instagram -->
-                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-instagram"></i></a>
-
-                <!-- Linkedin -->
-                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-linkedin"></i></a>
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1 tx-dec" href="https://github.com/SantinoVitale" role="button" data-mdb-ripple-color="dark"><i class="fab fa-github"></i> S.Vitale</a>
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1 tx-dec" href="https://github.com/camila-grilletti" role="button" data-mdb-ripple-color="dark"><i class="fab fa-github"></i> C.Grilletti</a>
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1 tx-dec" href="https://github.com/b-bastan" role="button" data-mdb-ripple-color="dark"><i class="fab fa-github"></i> B.Bastan</a>
                 <!-- Github -->
-                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-github"></i></a>
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1 tx-dec" href="https://github.com/Ch1nolas" role="button" data-mdb-ripple-color="dark"><i class="fab fa-github"></i> N.Martinez</a>
             </section>
         </div>
 
